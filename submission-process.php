@@ -3,6 +3,9 @@
 	if(!isset($_POST['name']) or !isset($_POST['email']) or !isset($_POST['msg']) ) {
 		redirect('form.php');
 	}
+	if(!validateEmail($_POST['email'])) {
+		redirect('form.php');
+	}
 
 	$name = $_POST['name'];
 	$email = $_POST['email'];
